@@ -1,15 +1,9 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     scroll-behavior: smooth;
+    color: black; /* All text is black */
 }
 
 /* Video Container */
@@ -51,11 +45,12 @@ body {
 
 /* Header Styles */
 .header {
-    background: rgba(0, 0, 0, 0.7);
+    background: transparent; /* Transparent background for header */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    border: none; /* Remove border if any */
 }
 
 .header-logo {
@@ -66,6 +61,32 @@ body {
 .navbar-nav .nav-link {
     color: white;
     font-weight: bold;
+    font-family: 'Kanit', sans-serif; /* Använd fonten Kanit för länkarna i headern */
+}
+
+.navbar-nav .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    color: white;
+    font-size: 18px;
+    background: #007bff;
+    border-radius: 50%;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar-nav .social-icon:hover {
+    background: #0056b3; /* Darker blue on hover */
+    color: white;
+}
+
+.navbar-nav .social-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Hero Section */
@@ -78,15 +99,19 @@ body {
     padding: 0.5rem 1rem;
     margin: 0.5rem;
     border: none;
-    background: #333;
+    background: #007bff; /* Blue buttons */
     color: white;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s; /* Lägg till en övergångseffekt */
+    transition: background 0.3s, color 0.3s, opacity 0.3s; /* Lägg till en övergångseffekt */
+}
+
+.hero-button.fade-out {
+    opacity: 0;
 }
 
 .hero-button:hover, .form-button:hover, .section-button:hover {
-    background: #ECFD29; /* Ändra bakgrundsfärgen vid hover */
-    color: #333; /* Ändra textfärgen vid hover */
+    background: #0056b3; /* Darker blue on hover */
+    color: white;
 }
 
 /* Section Styles */
@@ -95,7 +120,7 @@ body {
     margin-top: 5rem; /* Justera margin-top för att minska avstånd */
     position: relative;
     z-index: 2;
-    background: rgba(211, 211, 211, 0.9); /* Ljusgrå, lätt transparent bakgrund */
+    background: linear-gradient(135deg, rgba(46, 164, 218, 0.7) 0%, rgba(24, 94, 124, 0.7) 100%); /* Gradient background */
     backdrop-filter: blur(10px); /* För att ge en suddig effekt på bakgrunden */
     overflow: hidden;
 }
@@ -142,26 +167,95 @@ body {
     padding: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
+    color: black;
 }
 
 .form-button {
     padding: 0.5rem 1rem;
     border: none;
-    background: #333;
+    background: #007bff; /* Blue buttons */
     color: white;
     cursor: pointer;
     transition: background 0.3s, color 0.3s; /* Lägg till en övergångseffekt */
 }
 
 .form-button:hover {
-    background: #ECFD29; /* Lägg till hover-effekt för formulärknappar */
-    color: #333;
+    background: #0056b3; /* Darker blue on hover */
+    color: white;
 }
 
 /* Footer Styles */
 .footer {
     text-align: center;
     padding: 1rem;
-    background: #333;
+    background: #0056b3; /* Blue background for footer */
     color: white;
 }
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Initialt dold */
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background 0.3s, color 0.3s; /* Lägg till en övergångseffekt */
+}
+
+#back-to-top:hover {
+    background: #0056b3; /* Blue background on hover */
+    color: white;
+}
+
+/* Project Section */
+#projects {
+    background: transparent; /* Transparent background for projects */
+    padding: 0; /* Ta bort padding */
+    margin-top: 50px; /* Lägg till margin-top för att skapa avstånd */
+}
+
+#projects h2 {
+    display: none; /* Dölj rubriken */
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Gör så att bilderna täcker hela ytan utan att förvrängas */
+    max-height: 100vh; /* Maxhöjd för att undvika för stora bilder */
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+
+.carousel-indicators li {
+    background-color: #007bff;
+}
+
+.carousel-indicators .active {
+    background-color: #0056b3;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #0056b3;
+}
+
+
